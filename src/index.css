@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    --background: 30 50% 97%;
+    --foreground: 340 30% 25%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 340 30% 25%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 340 30% 25%;
+
+    --primary: 340 70% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 160 40% 80%;
+    --secondary-foreground: 160 40% 25%;
+
+    --muted: 30 30% 93%;
+    --muted-foreground: 340 15% 50%;
+
+    --accent: 45 90% 75%;
+    --accent-foreground: 45 60% 25%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 340 25% 88%;
+    --input: 340 25% 88%;
+    --ring: 340 70% 65%;
+
+    --radius: 1rem;
+
+    --kawaii-mint: 160 40% 80%;
+    --kawaii-pink: 340 70% 85%;
+    --kawaii-yellow: 45 90% 82%;
+    --kawaii-lavender: 270 50% 85%;
+    --kawaii-peach: 20 80% 85%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 340 70% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 340 25% 95%;
+    --sidebar-accent-foreground: 340 30% 25%;
+    --sidebar-border: 340 25% 88%;
+    --sidebar-ring: 340 70% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Nunito', sans-serif;
+  }
+}
+
+@layer utilities {
+  .kawaii-shadow {
+    box-shadow: 0 4px 20px -4px hsl(340 70% 65% / 0.15),
+                0 2px 8px -2px hsl(340 70% 65% / 0.1);
+  }
+
+  .kawaii-shadow-lg {
+    box-shadow: 0 8px 30px -6px hsl(340 70% 65% / 0.2),
+                0 4px 12px -4px hsl(340 70% 65% / 0.1);
+  }
+
+  .float-animation {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+
+  .bounce-in {
+    animation: bounceIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  @keyframes bounceIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+}
